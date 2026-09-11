@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мекан Маммедов | Lead AI-Engineer &amp; Boutique Automation Architect</title>
+  <meta name="description" content="Мекан Маммедов — Lead AI-Engineer и Boutique Automation Architect. Высоконадежная сетевая инфраструктура, сверхбыстрый Hybrid RAG (4.5ms), высоконагруженный бэкенд и Telegram Mini Apps.">
+  <meta name="keywords" content="Мекан Маммедов, AI Engineer, VLESS, Xray, Fastly Anycast, Hybrid RAG, Customs Copilot, Telegram Mini Apps, FastAPI, Python, PostgreSQL, n8n">
+  <meta name="author" content="Мекан Маммедов">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Мекан Маммедов | Lead AI-Engineer &amp; System Architect">
+  <meta property="og:description" content="Симбиоз распределенного сетевого инжиниринга, сверхбыстрого AI (Hybrid RAG 4.5ms) и автономных цифровых фабрик.">
+  <meta property="og:image" content="images/avatar.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ── SCROLL PROGRESS ── -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ── AMBIENT BACKGROUND ── -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ── WELCOME TOAST ── -->
+  <div id="welcomeToast" class="welcome-toast" role="status" aria-live="polite"></div>
+
+  <!-- ── CUSTOM CURSOR ── -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── PARTICLES CANVAS ── -->
+  <canvas id="frost-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── PAGE LOADER ── -->
+  <div id="loader">
+    <div class="loader-brand">
+      <span style="color:var(--accent-dk);">✨</span> MM
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-text" id="loaderText">INITIALIZING SYSTEM ARCHITECTURE...</div>
+  </div>
+
+  <!-- ── FLOATING NAVIGATION ── -->
+  <nav id="mainNav">
+    <a href="#home" class="nav-logo" data-section="home" aria-label="На главную">
+      <div class="nav-badge-icon">MM</div>
+      <span class="nav-name">Мекан Маммедов</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about" data-section="about">Обо мне</a></li>
+      <li><a href="#skills" data-section="skills">Стек &amp; Системы</a></li>
+      <li><a href="#experience" data-section="experience">Опыт</a></li>
+      <li><a href="#projects" data-section="projects">Проекты</a></li>
+      <li><a href="#contact" data-section="contact">Контакты</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="#contact" class="nav-resume">Резюме ↗</a>
+      <a href="mailto:mikhailmammeedov@gmail.com" class="nav-cta">Связаться</a>
+
+      <!-- Status Indicator Pill -->
+      <div class="nav-status-pill">
+        <span class="badge-dot"></span>
+        <span>Available</span>
+      </div>
+    </div>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" data-section="about">Обо мне</a>
+    <a href="#skills" data-section="skills">Стек &amp; Системы</a>
+    <a href="#experience" data-section="experience">Опыт</a>
+    <a href="#projects" data-section="projects">Проекты</a>
+    <a href="#contact" data-section="contact">Контакты</a>
+    <a href="#contact" class="mobile-resume">Резюме ↗</a>
+    <a href="mailto:mikhailmammeedov@gmail.com" class="mobile-cta">Нанять / Сотрудничество</a>
+  </div>
+
+  <!-- ── 01. HOME / HERO ── -->
+  <section id="home">
+    <div class="home-stage">
+      <span class="home-watermark" aria-hidden="true">MM</span>
+      <div class="hero-wrap">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-left">
+          <div class="hero-meta-row">
+            <span class="hero-badge"><span class="badge-dot"></span>&nbsp; Available for Architecture Projects</span>
+            <p class="hero-eyebrow">Lead AI-Engineer &amp; Boutique Automation Architect</p>
+          </div>
+          <p class="hero-greeting">Привет <span class="wave-emoji" aria-hidden="true">👋</span>,</p>
+          <h1 class="hero-name">Я Мекан<br><span class="gradient-text">Маммедов</span></h1>
+          
+          <div class="decrypt-line" id="decryptLine">
+            <span class="decrypt-prefix">Архитектор: </span>
+            <span id="decryptText"></span><span class="decrypt-cursor"></span>
+          </div>
+
+          <p class="hero-desc">
+            Симбиоз распределенного сетевого инжиниринга, автономных цифровых фабрик и высокоскоростного AI. Проектирую отказоустойчивые системы: от закрытых транспортных протоколов и Anycast-маршрутизации до гибридных RAG-пайплайнов с задержкой 4.5 мс и высоконагруженных бэкендов.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" data-section="projects" class="btn-primary magnetic">Смотреть проекты →</a>
+            <a href="#contact" data-section="contact" class="btn-outline magnetic">Связаться</a>
+          </div>
+        </div>
+
+        <!-- Right Hero Terminal Panel -->
+        <div class="hero-right">
+          <div class="hero-panel" id="tiltCard">
+            <div class="hero-panel-meta">
+              <span class="panel-label">Engineer Dossier</span>
+              <span class="panel-status"><span class="badge-dot"></span> Production Ready</span>
+            </div>
+            <div class="hero-terminal glass-card">
+              <div class="terminal-bar">
+                <div class="terminal-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="terminal-title">mekan@architect ~ %</div>
+              </div>
+              <pre class="terminal-code"><span class="t-dim">$</span> curl -s /api/v1/engineer/mekan
+<span class="t-gold">{</span>
+  <span class="t-key">"name"</span>: <span class="t-str">"Мекан Маммедов"</span>,
+  <span class="t-key">"role"</span>: <span class="t-str">"Lead AI-Engineer &amp; System Architect"</span>,
+  <span class="t-key">"transport_core"</span>: <span class="t-str">"VLESS + Anycast CDN + Happ Crypt5"</span>,
+  <span class="t-key">"rag_engine"</span>: <span class="t-str">"FastEmbed ONNX + BM25 FTS5 (4.5ms)"</span>,
+  <span class="t-key">"backend"</span>: [<span class="t-str">"FastAPI"</span>, <span class="t-str">"PostgreSQL 16"</span>, <span class="t-str">"RabbitMQ"</span>],
+  <span class="t-key">"telegram_apps"</span>: [<span class="t-str">"Next.js TMA"</span>, <span class="t-str">"Supabase RLS"</span>, <span class="t-str">"Stars"</span>],
+  <span class="t-key">"zero_downtime"</span>: <span class="t-str">"gRPC hot-reload (adu/rmu)"</span>,
+  <span class="t-key">"telegram_contact"</span>: <span class="t-str">"@irreproachablee"</span><span class="t-blink">_</span>
+<span class="t-gold">}</span></pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 02. ABOUT ── -->
+  <section id="about">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">01</span>
+          <span class="section-name">About Me</span>
+        </div>
+        <h2 class="section-title">Философия и <em>инженерный стек</em></h2>
+      </header>
+
+      <div class="about-grid">
+        
+        <!-- Photo Frame with Clean Non-Floating Meta -->
+        <div class="about-photo-frame glass-card" id="aboutPhotoCard">
+          <div class="about-img-wrap">
+            <img src="images/avatar.jpg" alt="Мекан Маммедов" class="about-photo" loading="lazy">
+          </div>
+          <!-- Clean Meta Pill Row (Eliminated Clumped Badges) -->
+          <div class="about-photo-meta">
+            <span class="photo-meta-tag">🛡️ Transport &amp; Stealth</span>
+            <span class="photo-meta-tag">⚡ 4.5ms Hybrid RAG</span>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="about-content">
+          <div class="about-pull">
+            «Мы не просто пишем код — мы строим автономные цифровые "заводы" и SaaS-комбайны, работающие 24/7 с нулевым даунтаймом.»
+          </div>
+          <p class="about-desc">
+            Привет! Я <strong>Lead AI-Engineer и Full-stack системный архитектор</strong>. Мой бэкграунд объединяет глубокую экспертизу в низкоуровневой сетевой безопасности, проектировании распределенных транспортных сетей, высоконагруженных бэкендов (<strong>FastAPI, PostgreSQL 16, RabbitMQ</strong>) и создании сверхбыстрых AI-решений (<strong>Hybrid RAG, Vision OCR, Pydantic</strong>).
+          </p>
+          <p class="about-desc">
+            Это позволяет мне не просто создавать интерфейсы, а проектировать отказоустойчивые клиент-серверные экосистемы, выдерживающие экстремальные нагрузки и нестабильность каналов связи. Специализируюсь на разработке <strong>Telegram Web Apps (TWA/TMA)</strong>, инструментах модерации (Chrome Extensions), корпоративных панелях мониторинга и автономных бизнес-пайплайнах (n8n, Playwright Stealth).
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-num">35,000+</div>
+          <div class="stat-label">Кодов ТН ВЭД в индексе</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.5 ms</div>
+          <div class="stat-label">Задержка Hybrid RAG</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">230+</div>
+          <div class="stat-label">n8n Сценариев автоматизации</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">99.9%</div>
+          <div class="stat-label">Аптайм сетевых узлов</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 03. SKILLS & SYSTEMS ── -->
+  <section id="skills">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">02</span>
+          <span class="section-name">Capabilities</span>
+        </div>
+        <h2 class="section-title">Технологический <em>арсенал</em></h2>
+      </header>
+
+      <!-- Logo Marquee Track (Uniform Clean Pills) -->
+      <div class="skills-logo-track" id="logoTrack"></div>
+
+      <!-- Skills Grid -->
+      <div class="skills-grid">
+        
+        <!-- Skill 1: High-Resilience Transport & Traffic Shaping (Lead Card) -->
+        <div class="skill-cat skill-cat--lead">
+          <div class="skill-cat-header">
+            <div class="skill-icon-box">🛡️</div>
+            <div>
+              <div class="skill-cat-title">Сетевой инжиниринг и отказоустойчивые транспортные протоколы (High-Resilience Transport &amp; Traffic Shaping)</div>
+              <div class="skill-cat-desc">Проектирование закрытых распределенных транспортных сетей в условиях агрессивных сетевых аномалий и глубокой инспекции пакетов</div>
+            </div>
+          </div>
+          <ul class="skill-cat-list">
+            <li><strong>Прорыв глубокой инспекции пакетов (DPI):</strong> Проектирование и развертывание современных протоколов сквозного шифрования (VLESS, Xray-core, XHTTP packet-up, WebSocket + TLS, Reality) для обеспечения бесперебойного транспортного уровня в условиях аномальных сетевых ограничений.</li>
+            <li><strong>Anycast CDN &amp; Маршрутизация:</strong> Выделение изолированных чистых узлов (Clean IP), интеграция через распределенные Anycast CDN (Fastly) и Cloudflare Edge, написание кастомных VCL-конфигураций и Origin CA Strict маршрутизация.</li>
+            <li><strong>Zero-Downtime Hot-Reloading:</strong> Управление клиентскими сессиями на лету без перезапуска демонов и без сброса активных соединений через внутренний gRPC API ядра Xray на уровне оперативной памяти (<code>adu</code> / <code>rmu</code>).</li>
+            <li><strong>Крипто-доставка и Anti-Theft:</strong> Интеграция шифрованного транспортного протокола подписок Happ Crypt5, защита конфигураций от копирования, жесткая аппаратно-зависимая валидация устройств (1-Device Lock) в условиях динамического мобильного CGNAT.</li>
+            <li><strong>Харденинг сетевого стека Linux:</strong> Изоляция периметра через iptables (строгий CDN-whitelist), низкоуровневый тюнинг ядра (контроль перегрузок BBR, буферы TCP, <code>tcp_slow_start_after_idle</code>) для устранения джиттера и потерь пакетов в мобильных сетях.</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">VLESS</span>
+            <span class="skill-tag">Xray-core gRPC</span>
+            <span class="skill-tag">Fastly Anycast</span>
+            <span class="skill-tag">Happ Crypt5</span>
+            <span class="skill-tag">XHTTP packet-up</span>
+            <span class="skill-tag">iptables whitelist</span>
+            <span class="skill-tag">TCP BBR</span>
+          </div>
+        </div>
+
+        <!-- Skill 2: AI & B2B SaaS (Customs Copilot) -->
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <div class="skill-icon-box">🤖</div>
+            <div>
+              <div class="skill-cat-title">AI &amp; B2B SaaS (Customs Copilot / ТН ВЭД)</div>
+              <div class="skill-cat-desc">Сверхбыстрый поиск и структурированные LLM-пайплайны</div>
+            </div>
+          </div>
+          <ul class="skill-cat-list">
+            <li><strong>Ultra-Fast Hybrid RAG:</strong> Полнотекстовый (BM25 / SQLite FTS5) и векторный поиск (FastEmbed BGE-small ONNX) с гибридным ранжированием Reciprocal Rank Fusion (RRF), обрабатывающий базу из 35 000+ кодов за <strong>4.5 миллисекунды</strong>.</li>
+            <li><strong>Ингестия документов и OCR:</strong> Парсинг PDF с нулевыми задержками (89 мс), пайплайны сжатия Pillow для передачи сканов в Vision LLM.</li>
+            <li><strong>Структурированная генерация:</strong> Pydantic и Instructor для строго типизированных финансовых/таможенных расчетов без галлюцинаций.</li>
+            <li><strong>ExcelEngine:</strong> Генерация пиксель-в-пиксель отчетов в Excel с экстремальным сжатием и корпоративным форматированием.</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">Hybrid RAG</span>
+            <span class="skill-tag">FastEmbed ONNX</span>
+            <span class="skill-tag">SQLite FTS5</span>
+            <span class="skill-tag">BM25 + RRF</span>
+            <span class="skill-tag">Pydantic</span>
+            <span class="skill-tag">ExcelEngine</span>
+          </div>
+        </div>
+
+        <!-- Skill 3: High-Load Backend & Databases -->
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <div class="skill-icon-box">⚙️</div>
+            <div>
+              <div class="skill-cat-title">Высоконагруженный Backend &amp; Базы данных</div>
+              <div class="skill-cat-desc">Асинхронные микросервисы и масштабируемые хранилища</div>
+            </div>
+          </div>
+          <ul class="skill-cat-list">
+            <li><strong>Python Core:</strong> FastAPI, Asyncio, asyncpg, строгая типизация и Pydantic v2.</li>
+            <li><strong>Базы данных и очереди:</strong> PostgreSQL 16 (с миграциями Alembic), Redis-кеширование, RabbitMQ (Producer-Consumer архитектура под пиковые нагрузки).</li>
+            <li><strong>Инфраструктура:</strong> Docker, Docker Compose, изолированные сети, автоматический healthcheck и мониторинг демонов.</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">PostgreSQL 16</span>
+            <span class="skill-tag">asyncpg</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">RabbitMQ</span>
+            <span class="skill-tag">Docker Compose</span>
+          </div>
+        </div>
+
+        <!-- Skill 4: Telegram-экосистема & TMA -->
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <div class="skill-icon-box">✈️</div>
+            <div>
+              <div class="skill-cat-title">Telegram-экосистема, боты и TMA</div>
+              <div class="skill-cat-desc">Telegram Mini Apps и автоматизация каналов</div>
+            </div>
+          </div>
+          <ul class="skill-cat-list">
+            <li><strong>TMA &amp; Fullstack:</strong> Next.js (TypeScript, React) + Supabase (PostgreSQL, политики доступа Row Level Security — RLS).</li>
+            <li><strong>Монетизация в Telegram:</strong> Интеграция платежей через <strong>Telegram Stars</strong>, разграничение триального и платного доступа к контенту.</li>
+            <li><strong>OSINT &amp; Автоматизация:</strong> Пул сессий Telethon/Pyrogram, сбор данных из каналов, оркестрация контентных фабрик через n8n и OpenAI.</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">Next.js TMA</span>
+            <span class="skill-tag">Supabase RLS</span>
+            <span class="skill-tag">Telegram Stars</span>
+            <span class="skill-tag">Pyrogram</span>
+            <span class="skill-tag">n8n</span>
+          </div>
+        </div>
+
+        <!-- Skill 5: Скрапинг & WAF Bypass -->
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <div class="skill-icon-box">🌐</div>
+            <div>
+              <div class="skill-cat-title">Скрапинг, WAF Bypass &amp; Фронтенд</div>
+              <div class="skill-cat-desc">Скрытный сбор данных и сверхбыстрые интерфейсы</div>
+            </div>
+          </div>
+          <ul class="skill-cat-list">
+            <li><strong>Скрытный парсинг:</strong> Обход WAF/Cloudflare (ошибки 403 Forbidden), ротация заголовков, извлечение скрытых данных из <code>__NEXT_DATA__</code> JSON в SSR-приложениях.</li>
+            <li><strong>Фронтенд-интерфейсы:</strong> Разработка легковесных, быстрых интерфейсов на чистом Vanilla JS/HTML/CSS (split-screen экраны, dark-mode, терминальный стиль для демо-стендов) и 3D-лендингов.</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">Playwright Stealth</span>
+            <span class="skill-tag">Cloudflare Bypass</span>
+            <span class="skill-tag">SSR JSON</span>
+            <span class="skill-tag">Vanilla JS</span>
+            <span class="skill-tag">CSS3 3D</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04. EXPERIENCE / MILESTONES ── -->
+  <section id="experience">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">03</span>
+          <span class="section-name">Milestones</span>
+        </div>
+        <h2 class="section-title">Практический <em>опыт и внедрения</em></h2>
+      </header>
+
+      <div class="exp-stack">
+        
+        <!-- Experience 1: High-Resilience Transport -->
+        <article class="exp-card exp-card--featured">
+          <div class="exp-index">🛡️</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Lead Network &amp; Stealth Infrastructure Architect</div>
+                <div class="exp-company">Distributed Transport &amp; Anycast Systems</div>
+              </div>
+              <span class="exp-period">2024 – Настоящее время</span>
+            </div>
+            <p class="exp-desc">
+              Проектирование и развертывание высоконадежной распределенной сетевой инфраструктуры передачи данных в условиях нестабильных каналов связи и глубокой фильтрации трафика (DPI). Архитектура сквозного шифрования (VLESS, XHTTP, WebSocket TLS), маршрутизация через Anycast CDN (Fastly) и Cloudflare Edge. Нулевой даунтайм при синхронизации клиентских сессий через gRPC API Xray прямо на уровне оперативной памяти (без перезапуска демонов). Низкоуровневый тюнинг ядра Linux (BBR, строгие списки доступа iptables) для устойчивости в мобильных сетях.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">VLESS</span>
+              <span class="skill-tag">Xray-core gRPC</span>
+              <span class="skill-tag">Fastly Anycast</span>
+              <span class="skill-tag">Happ Crypt5</span>
+              <span class="skill-tag">Linux Kernel BBR</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Experience 2: B2B Customs Copilot -->
+        <article class="exp-card">
+          <div class="exp-index">⚡</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Full-stack &amp; AI Systems Architect</div>
+                <div class="exp-company">B2B Customs Copilot (Классификатор ТН ВЭД)</div>
+              </div>
+              <span class="exp-period">2025 – 2026</span>
+            </div>
+            <p class="exp-desc">
+              Архитектура интеллектуального таможенного ассистента: база из 35,000+ кодов ТН ВЭД, сверхбыстрый <strong>Hybrid RAG (4.5 миллисекунды)</strong> на связке FastEmbed BGE-small ONNX + SQLite FTS5 (BM25) с Reciprocal Rank Fusion. Dual-Path ингестия PDF (89 мс), OCR сканов с прецизионным сжатием Pillow и модуль <strong>ExcelEngine</strong> для пиксель-в-пиксель генерации отчетов.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Hybrid RAG (4.5ms)</span>
+              <span class="skill-tag">FastEmbed ONNX</span>
+              <span class="skill-tag">SQLite BM25</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">ExcelEngine</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Experience 3: Enterprise Automation & TMA -->
+        <article class="exp-card">
+          <div class="exp-index">🚀</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Boutique Automation Architect</div>
+                <div class="exp-company">Enterprise Automation &amp; TMA Hub</div>
+              </div>
+              <span class="exp-period">2023 – 2025</span>
+            </div>
+            <p class="exp-desc">
+              Создание экосистемы Telegram Mini Apps (Next.js, TypeScript, Supabase RLS, Telegram Stars). Разработка внутренней аналитической системы «Smart Policeman» для управления парсерами и AI-агентами. Построение 230+ сценариев автоматизации в n8n, разработка Chrome Extension для модерации WB/Ozon и систем скрытного парсинга с обходом WAF.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Next.js TMA</span>
+              <span class="skill-tag">Supabase RLS</span>
+              <span class="skill-tag">Telegram Stars</span>
+              <span class="skill-tag">n8n (230+ workflows)</span>
+              <span class="skill-tag">Chrome Extension</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05. PROJECTS (BENTO MOSAIC) ── -->
+  <section id="projects">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-num">04</span>
+          <span class="section-name">Featured Work</span>
+        </div>
+        <h2 class="section-title">Ключевые <em>реализованные кейсы</em></h2>
+      </header>
+
+      <!-- Category Filter Tabs -->
+      <div class="projects-filter">
+        <button type="button" class="filter-btn active" data-filter="all">Все проекты</button>
+        <button type="button" class="filter-btn" data-filter="transport">Transport &amp; Network</button>
+        <button type="button" class="filter-btn" data-filter="ai-rag">AI &amp; RAG</button>
+        <button type="button" class="filter-btn" data-filter="tma">Telegram &amp; TMA</button>
+        <button type="button" class="filter-btn" data-filter="automation">Automation &amp; Tools</button>
+      </div>
+
+      <div class="projects-bento">
+        
+        <!-- Project 1: Resilient Transport Core & Anycast Routing (Lead) -->
+        <div class="project-card project-card--lead" data-category="transport">
+          <div class="project-banner">
+            <span class="project-badge-pill">🛡️ Network Architecture</span>
+            <span class="project-metric-highlight">99.9% Transport Uptime</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Resilient Transport Core &amp; Anycast Routing</h3>
+            <p class="project-period">2024 – Настоящее время · Инфраструктурный проект</p>
+            <p class="project-desc">
+              Автономный распределенный программный комплекс для защищенного туннелирования трафика в агрессивных сетевых средах: гибридный транспортный стек <strong>VLESS + Xray-core</strong> (протоколы XHTTP packet-up и WebSocket TLS). Автоматический поиск чистых узлов через <strong>Fastly Anycast CDN</strong>, управление пользовательскими сессиями без даунтайма через <strong>gRPC API (adu/rmu)</strong>, защищенная доставка профилей через <strong>Happ Crypt5</strong> и привязка к сессиям устройства (1-Device Lock) в мобильных сетях. Оптимизация ядра Linux (BBR) для максимальной пропускной способности.
+            </p>
+            <div class="skill-tags" style="margin-bottom:1.2rem;">
+              <span class="skill-tag">VLESS</span>
+              <span class="skill-tag">Xray-core</span>
+              <span class="skill-tag">Fastly CDN</span>
+              <span class="skill-tag">Happ Crypt5</span>
+              <span class="skill-tag">gRPC hot-reload</span>
+              <span class="skill-tag">BBR</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link--badge">🔒 Private Infrastructure</span>
+              <a href="#contact" class="project-link">Запросить архитектуру ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: B2B Customs Copilot (Lead) -->
+        <div class="project-card project-card--lead" data-category="ai-rag">
+          <div class="project-banner">
+            <span class="project-badge-pill">🤖 AI &amp; B2B SaaS</span>
+            <span class="project-metric-highlight">4.5ms Latency · 35k Codes</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Customs Copilot (Классификатор ТН ВЭД)</h3>
+            <p class="project-period">2025 – 2026 · Корпоративный SaaS</p>
+            <p class="project-desc">
+              Высокопроизводительный ассистент для внешнеэкономической деятельности: гибридный RAG на базе <strong>FastEmbed BGE-small (ONNX)</strong> и <strong>SQLite FTS5 (BM25)</strong> с Reciprocal Rank Fusion (RRF), обеспечивающий точный поиск по 35 000+ кодам за <strong>4.5 миллисекунды</strong>. Dual-Path ингестия PDF (89 мс), Vision OCR со сжатием Pillow и встроенный модуль <strong>ExcelEngine</strong> для автоматической генерации отчетов пиксель-в-пиксель.
+            </p>
+            <div class="skill-tags" style="margin-bottom:1.2rem;">
+              <span class="skill-tag">Hybrid RAG</span>
+              <span class="skill-tag">FastEmbed ONNX</span>
+              <span class="skill-tag">SQLite FTS5</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">ExcelEngine</span>
+              <span class="skill-tag">Pydantic</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link--badge">💼 Enterprise SaaS</span>
+              <a href="#contact" class="project-link">Демонстрация ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: "Smart Policeman" & TMA Hub -->
+        <div class="project-card" data-category="tma">
+          <div class="project-banner">
+            <span class="project-badge-pill">✈️ Telegram Web App</span>
+            <span class="project-metric-highlight">Full-stack TMA</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">"Smart Policeman" &amp; TMA Hub</h3>
+            <p class="project-period">TMA + Supabase RLS | Full-stack</p>
+            <p class="project-desc">
+              Универсальный мобильный интерфейс внутри Telegram для управления бэкенд-процессами: запуск парсеров, аудио-отчеты (Whisper), аналитика LLM, асинхронный REST API и монетизация через <strong>Telegram Stars</strong> с разграничением прав на уровне базы (Supabase RLS).
+            </p>
+            <div class="skill-tags" style="margin-bottom:1.2rem;">
+              <span class="skill-tag">Next.js TMA</span>
+              <span class="skill-tag">Supabase RLS</span>
+              <span class="skill-tag">Telegram Stars</span>
+              <span class="skill-tag">Whisper</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link--badge">📱 Telegram Ecosystem</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Custom Chrome Extension -->
+        <div class="project-card" data-category="automation">
+          <div class="project-banner">
+            <span class="project-badge-pill">🧩 Browser Extension</span>
+            <span class="project-metric-highlight">Live DOM Injection</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Marketplaces Custom Extension</h3>
+            <p class="project-period">WB &amp; Ozon Tool | Frontend &amp; DOM</p>
+            <p class="project-desc">
+              Инструмент для модификации UI маркетплейсов: динамическая фильтрация карточек, инъекция в сторонний DOM без просадки FPS, асинхронная подгрузка скрытых аналитических метрик и подсветка критических позиций на лету.
+            </p>
+            <div class="skill-tags" style="margin-bottom:1.2rem;">
+              <span class="skill-tag">Chrome Extension API</span>
+              <span class="skill-tag">DOM MutationObserver</span>
+              <span class="skill-tag">Async Fetch</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link--badge">⚙️ Browser Tool</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Enterprise Dashboards & Automation -->
+        <div class="project-card" data-category="automation">
+          <div class="project-banner">
+            <span class="project-badge-pill">📊 Automation Factory</span>
+            <span class="project-metric-highlight">230+ Workflows</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Enterprise Automation Dashboards</h3>
+            <p class="project-period">n8n + Supabase | Full-stack AI</p>
+            <p class="project-desc">
+              Комплексные воркфлоу (230+ сценариев n8n) и веб-интерфейсы для мониторинга бизнес-процессов: синхронизация в реальном времени, работа с массивами данных в сотни тысяч записей, очереди RabbitMQ и вебхуки.
+            </p>
+            <div class="skill-tags" style="margin-bottom:1.2rem;">
+              <span class="skill-tag">n8n</span>
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Webhooks</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link--badge">⚡ High-Scale</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Scraper-Sniper & Anti-Fraud Suite -->
+        <div class="project-card" data-category="automation">
+          <div class="project-banner">
+            <span class="project-badge-pill">🛡️ Scraping &amp; SecOps</span>
+            <span class="project-metric-highlight">WAF Bypass · Stealth</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Anti-Fraud &amp; Scraper Suite</h3>
+            <p class="project-period">Playwright Stealth + AppleScript</p>
+            <p class="project-desc">
+              Скрытный сбор данных с защищенных порталов (обход Cloudflare WAF, ротация фингерпринтов, извлечение скрытых данных из SSR <code>__NEXT_DATA__</code> JSON). Включает LinkedIn AI Job Agent и систему Ozon Auto-Reply (экономия 30+ часов в месяц).
+            </p>
+            <div class="skill-tags" style="margin-bottom:1.2rem;">
+              <span class="skill-tag">Playwright Stealth</span>
+              <span class="skill-tag">WAF Bypass</span>
+              <span class="skill-tag">SSR JSON</span>
+              <span class="skill-tag">LinkedIn Agent</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link--badge">🤖 Stealth Suite</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 06. RESUME / OFFER BANNER ── -->
+  <div id="resume-section">
+    <div class="container">
+      <div class="resume-inner">
+        <div class="resume-text">
+          <h3>Нужна надежная автономная система?</h3>
+          <p>Проектирую и внедряю отказоустойчивую архитектуру: от защищенных транспортных сетей до B2B AI-решений и высоконагруженного бэкенда.</p>
+        </div>
+        <div class="resume-actions">
+          <a href="https://t.me/irreproachablee" target="_blank" rel="noopener noreferrer" class="btn-primary magnetic">Связаться в Telegram ↗</a>
+          <a href="#contact" class="btn-outline magnetic">Контакты &amp; Резюме</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 07. CONTACT ── -->
+  <section id="contact">
+    <div class="container">
+      <header class="section-header section-header--center">
+        <div class="section-eyebrow">
+          <span class="section-num">05</span>
+          <span class="section-name">Contact</span>
+        </div>
+        <h2 class="section-title">Давайте обсудим <em>ваш проект</em></h2>
+      </header>
+
+      <div class="contact-inner">
+        
+        <!-- Contact Left Info -->
+        <div class="contact-left">
+          <h3>Прямой контакт</h3>
+          <p>
+            Открыт к сложным архитектурным вызовам, разработке AI-агентов, защищенной сетевой инфраструктуры и высоконагруженных бэкенд-систем.
+          </p>
+
+          <div class="contact-meta">
+            <div>📱 <strong>Телефон:</strong> <a href="tel:+99363126699" style="color:var(--accent-dk);text-decoration:none;">+993 63 126699</a></div>
+            <div>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/99363126699" target="_blank" style="color:var(--accent-dk);text-decoration:none;">wa.me/+99363126699</a></div>
+            <div>✈️ <strong>Telegram:</strong> <a href="https://t.me/irreproachablee" target="_blank" style="color:var(--accent-dk);text-decoration:none;">@irreproachablee</a></div>
+            <div>✉️ <strong>Email:</strong> <a href="mailto:mikhailmammeedov@gmail.com" style="color:var(--accent-dk);text-decoration:none;">mikhailmammeedov@gmail.com</a></div>
+            <div>📍 <strong>Локация:</strong> Remote / Worldwide Availability</div>
+            <div>⚡ <strong>Формат:</strong> Boutique Automation Architect &amp; Lead AI-Engineer</div>
+          </div>
+
+          <div class="social-block">
+            <p class="social-heading">Каналы связи</p>
+            <!-- Clean Spacious Social Buttons Container -->
+            <div class="social-links" id="socialLinks"></div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="cf-name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="cf-email" placeholder="Email адрес" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="cf-subject" placeholder="Тема / Название проекта">
+          </div>
+          <div class="form-group">
+            <textarea id="cf-msg" rows="5" placeholder="Опишите задачу или проект..." required></textarea>
+          </div>
+          <div class="form-status" id="cf-status"></div>
+          <button type="button" id="cf-btn" class="btn-primary magnetic" onclick="handleContact()" style="align-self:flex-start;">
+            Отправить сообщение →
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© 2026 Мекан Маммедов. Все права защищены.</div>
+        <div>Lead AI-Engineer &amp; Boutique Automation Architect</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── CHATBOT COPILOT ── -->
+  <div class="chat-btn-wrap">
+    <button type="button" class="chat-trigger-btn" onclick="toggleChat()" aria-label="Открыть чат с ассистентом" title="Спросить ассистента">
+      💬
+      <div class="chat-pulse"></div>
+    </button>
+  </div>
+
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">✨</div>
+        <div>
+          <div class="chat-name">Mekan Copilot</div>
+          <div class="chat-status"><span class="badge-dot"></span> Online</div>
+        </div>
+      </div>
+      <button type="button" class="chat-close-btn" onclick="toggleChat()" aria-label="Закрыть чат">✕</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">
+        Привет! 👋 Я интерактивный ассистент Мекана. Чем могу помочь? Выберите быстрый вопрос ниже или напишите свой.
+      </div>
+    </div>
+
+    <div class="quick-replies" id="quickReplies">
+      <button type="button" class="quick-btn" onclick="sendQuick('Стек навыков')">Стек навыков</button>
+      <button type="button" class="quick-btn" onclick="sendQuick('Транспортные сети')">Транспортные сети</button>
+      <button type="button" class="quick-btn" onclick="sendQuick('Customs Copilot')">Customs Copilot</button>
+      <button type="button" class="quick-btn" onclick="sendQuick('Связаться / Нанять')">Связаться</button>
+    </div>
+
+    <div class="chat-input-bar">
+      <input type="text" id="chatInput" class="chat-input" placeholder="Задайте вопрос..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button type="button" class="chat-send-btn" onclick="sendMessage()">→</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/icons.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
