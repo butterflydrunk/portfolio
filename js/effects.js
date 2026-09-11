@@ -34,7 +34,7 @@ window.addEventListener('scroll', () => {
 /* ── 3D tilt on cards (Hero Terminal & About Photo) ── */
 function applyTilt(elId) {
   const card = document.getElementById(elId);
-  if (!card || window.matchMedia('(max-width:900px)').matches) return;
+  if (!card || window.matchMedia('(max-width:900px)').matches || ('ontouchstart' in window) || navigator.maxTouchPoints > 0) return;
 
   card.addEventListener('mousemove', (e) => {
     const r = card.getBoundingClientRect();
@@ -52,7 +52,7 @@ applyTilt('aboutPhotoCard');
 
 /* ── Magnetic buttons ── */
 document.querySelectorAll('.magnetic').forEach((btn) => {
-  if (window.matchMedia('(max-width:900px)').matches) return;
+  if (window.matchMedia('(max-width:900px)').matches || ('ontouchstart' in window) || navigator.maxTouchPoints > 0) return;
   btn.addEventListener('mousemove', (e) => {
     const r = btn.getBoundingClientRect();
     const x = e.clientX - r.left - r.width / 2;
