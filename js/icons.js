@@ -68,7 +68,7 @@ function initSocialLinks() {
   const links = [
     { name: 'Telegram', url: 'https://t.me/irreproachablee', icon: 'telegram', color: '26A5E4' },
     { name: 'Email', url: 'mailto:mikhailmammeedov@gmail.com', icon: 'gmail', color: 'EA4335' },
-    { name: 'GitHub', url: 'https://github.com', icon: 'github', color: 'FFFFFF' }
+    { name: 'GitHub', url: 'https://github.com/butterflydrunk', icon: 'github', color: 'FFFFFF' }
   ];
 
   links.forEach(l => {
