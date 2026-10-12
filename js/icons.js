@@ -15,6 +15,9 @@ const TELEGRAM_HANDLE = 'irreproachablee';
 
 /* Tech Stack for Marquee Track - Carefully curated clean icons */
 const TECH_STACK = [
+  { name: 'PyTorch', icon: 'pytorch', color: 'EE4C2C' },
+  { name: 'OpenCV', icon: 'opencv', color: '5C3EE8' },
+  { name: 'MLflow', icon: 'mlflow', color: '0194E2' },
   { name: 'Python', icon: 'python', color: '3776AB' },
   { name: 'FastAPI', icon: 'fastapi', color: '009688' },
   { name: 'PostgreSQL', icon: 'postgresql', color: '4169E1' },

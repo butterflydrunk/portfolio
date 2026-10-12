@@ -79,18 +79,18 @@ if (dot && ring) {
 
 /* ── DECRYPT TEXT HERO ── */
 const phrases_ru = [
+  'Senior ML Engineer (3D & Spatial AI)',
+  'PyTorch, laspy & rasterio Specialist',
   'Lead AI-Engineer & System Architect',
-  'High-Resilience Transport & Stealth Specialist',
   'Ultra-Fast Hybrid RAG Architect (4.5ms)',
-  'High-Load Backend & Async Systems Developer',
-  'Telegram Mini Apps & Automation Pioneer'
+  'High-Resilience Transport & Stealth Specialist'
 ];
 const phrases_en = [
+  'Senior ML Engineer (3D & Spatial AI)',
+  'PyTorch, laspy & rasterio Specialist',
   'Lead AI-Engineer & System Architect',
-  'High-Resilience Transport & Stealth Specialist',
   'Ultra-Fast Hybrid RAG Architect (4.5ms)',
-  'High-Load Async Backend Developer',
-  'Telegram Mini Apps & Automation Pioneer'
+  'High-Resilience Transport & Stealth Specialist'
 ];
 
 let activePhrases = phrases_ru;
@@ -312,18 +312,35 @@ const kb_ru = {
 • Локация: Remote / Global Availability
 • Формат: Boutique Automation Architect & Lead AI-Engineer`,
 
-  hire: `Мекан открыт для высоконагруженных и сложных архитектурных проектов!
+  ml: `Экспертиза в Machine Learning & 3D Spatial Data:
+
+• Стек: Python, PyTorch, OpenCV, laspy, rasterio.
+• 3D & ГИС форматы: LiDAR облака точек (LAS/LAZ), мультиспектральные растры (GeoTIFF), матрицы высот DEM, преобразование CRS/EPSG.
+• Задачи: Сегментация 3D облаков точек, нарезка геопространственных тайлов, обучение и дообучение моделей, оценка качества (IoU, F1).
+• MLOps & Промышленный Python: DVC (версионирование данных), MLflow / ClearML (трекинг экспериментов), Docker-контейнеризация, Pydantic v2.
+• Формат сотрудничества: Аутстафф / B2B контракт (ИП / Самозанятость), полная занятость (Full-time Remote).`,
+
+  hire: `Мекан открыт для ML-аутстаффа (ИП / Самозанятость, Full-time Remote) и сложных инженерных контрактов!
 Связаться можно напрямую в Telegram: @irreproachablee`
 };
 
 const kb_en = {
   skills: `Mekan Mammedov's Engineering Stack:
 
+• Machine Learning & 3D: PyTorch, OpenCV, laspy, rasterio, GeoTIFF, LiDAR LAS/LAZ, DVC, MLFlow, Docker.
 • Network Engineering: Resilient end-to-end encrypted protocols (VLESS, Xray-core, XHTTP packet-up), Anycast CDN (Fastly), Cloudflare Edge, Happ Crypt5, 1-Device Lock, in-memory gRPC hot-reloading (adu/rmu).
 • AI & RAG: Ultra-Fast Hybrid RAG (BM25 FTS5 + FastEmbed BGE-small ONNX) with Reciprocal Rank Fusion (4.5ms across 35k codes), Pydantic, Vision LLM OCR, ExcelEngine.
 • Backend & Data: Python, FastAPI, Asyncio, asyncpg, PostgreSQL 16, Redis, RabbitMQ, Docker Compose.
 • Telegram Ecosystem: Telegram Web Apps (TWA/TMA), Next.js, Supabase RLS, Telegram Stars, Telethon/Pyrogram OSINT.
 • Scraping: Playwright Stealth, WAF & Cloudflare bypass, SSR __NEXT_DATA__ extraction.`,
+
+  ml: `Machine Learning & 3D Spatial Data Engineering:
+
+• Stack: Python, PyTorch, OpenCV, laspy, rasterio.
+• 3D & GIS Formats: LiDAR point clouds (LAS/LAZ), multispectral rasters (GeoTIFF), digital elevation models (DEM), CRS/EPSG coordinate projections.
+• Core Focus: 3D point cloud semantic segmentation, spatial tiling pipelines, neural network training/fine-tuning, IoU/F1 benchmarking.
+• MLOps & Production Python: DVC (data lineage), MLflow / ClearML (experiment tracking), Docker containers, Pydantic v2.
+• Contract Model: Outstaff / B2B engagement (Sole Proprietor / ИП), 40h/week Full-time Remote.`,
 
   transport: `Network Engineering & Resilient Transport Networks:
 
@@ -344,12 +361,13 @@ const kb_en = {
 
   projects: `Mekan's Flagship Deployments:
 
-1. Resilient Transport Core & Anycast Routing — distributed mission-critical transport with Anycast CDN and Happ Crypt5.
-2. B2B Customs Copilot — AI intelligence for international trade with 4.5ms hybrid RAG and ExcelEngine.
-3. "Smart Policeman" & TMA Hub — mobile command interface inside Telegram with Supabase RLS and Telegram Stars.
-4. Marketplaces Custom Chrome Extension — DOM injection for real-time marketplace moderation and analytics.
-5. Enterprise Automation Dashboards — 230+ n8n workflows, high-scale database handling, and RabbitMQ queues.
-6. Anti-Fraud Bypass & Scraper Suite — Cloudflare WAF bypass, LinkedIn AI Job Agent, Ozon review automation.`,
+1. 3D Spatial AI & LiDAR Point Cloud Processing — laspy, rasterio, PyTorch, GeoTIFF, and DVC pipeline.
+2. Resilient Transport Core & Anycast Routing — distributed mission-critical transport with Anycast CDN and Happ Crypt5.
+3. B2B Customs Copilot — AI intelligence for international trade with 4.5ms hybrid RAG and ExcelEngine.
+4. "Smart Policeman" & TMA Hub — mobile command interface inside Telegram with Supabase RLS and Telegram Stars.
+5. Marketplaces Custom Chrome Extension — DOM injection for real-time marketplace moderation and analytics.
+6. Enterprise Automation Dashboards — 230+ n8n workflows, high-scale database handling, and RabbitMQ queues.
+7. Anti-Fraud Bypass & Scraper Suite — Cloudflare WAF bypass, LinkedIn AI Job Agent, Ozon review automation.`,
 
   contact: `Mekan's Direct Contacts:
 
@@ -358,9 +376,9 @@ const kb_en = {
 • Telegram: @irreproachablee (https://t.me/irreproachablee)
 • Email: mikhailmammeedov@gmail.com
 • Location: Remote / Worldwide Availability
-• Role: Boutique Automation Architect & Lead AI-Engineer`,
+• Role: Senior ML Engineer & Boutique Automation Architect`,
 
-  hire: `Mekan is open to high-impact architectural and engineering opportunities!
+  hire: `Mekan is available for Outstaff ML Contracts (Sole Proprietor / ИП, Full-time Remote) & System Architecture!
 Reach out directly on Telegram: @irreproachablee`
 };
 
@@ -369,6 +387,7 @@ function getReply(m) {
   const kb = isEn ? kb_en : kb_ru;
   m = m.toLowerCase();
 
+  if (/ml|pytorch|laspy|rasterio|geotiff|point cloud|облак|гис|gis|3d|lidar|аутстафф|outstaff|ип|самозанят/.test(m)) return kb.ml;
   if (/skill|стек|навык|технолог|stack/.test(m)) return kb.skills;
   if (/транспорт|сетев|transport|vless|xray|protocol|anycast|fastly|bbr|dpi/.test(m)) return kb.transport;
   if (/copilot|rag|таможн|тн вэд|hs code|search|customs/.test(m)) return kb.copilot;
@@ -377,8 +396,8 @@ function getReply(m) {
   if (/связ|контакт|телеграм|почт|email|telegram|phone|whatsapp/.test(m)) return kb.contact;
   if (/hello|hi|hey|привет|здравствуй/.test(m)) {
     return isEn
-      ? "Hello! I am Mekan's assistant. Ask me about network infrastructure, AI/RAG systems (Customs Copilot), projects, or how to get in touch!"
-      : "Привет! Я интерактивный ассистент Мекана. Спросите меня о сетевой инфраструктуре, AI-системах (Customs Copilot), проектах или контактах!";
+      ? "Hello! I am Mekan's assistant. Ask me about 3D Spatial ML (PyTorch, laspy, rasterio), network infrastructure, RAG systems, or how to get in touch!"
+      : "Привет! Я интерактивный ассистент Мекана. Спросите меня о 3D Spatial ML (PyTorch, laspy, rasterio), сетевой инфраструктуре, RAG-системах или контактах!";
   }
   return isEn
     ? "Great question! You can discuss this directly with Mekan on Telegram @irreproachablee or check out the projects section!"
