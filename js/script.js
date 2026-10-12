@@ -5,7 +5,7 @@
 
 /* ── TAB TITLE ── */
 let TAB_ACTIVE = 'Мекан Маммедов | Lead AI-Engineer';
-const TAB_AWAY = 'MissingEngineerException(); // Come back ⚡';
+const TAB_AWAY = 'MissingEngineerException(); // Return to Dossier';
 document.title = TAB_ACTIVE;
 document.addEventListener('visibilitychange', () => {
   document.title = document.hidden ? TAB_AWAY : TAB_ACTIVE;
@@ -19,7 +19,7 @@ const loaderMsgs = [
   'WARMING UP 35,000 HS CODES VECTOR CACHE...',
   'MOUNTING FASTAPI & RABBITMQ WORKERS...',
   'INITIALIZING TMA & SUPABASE RLS...',
-  'SYSTEM READY ✨'
+  'SYSTEM READY'
 ];
 let lw = 0;
 const lBar = document.getElementById('loaderBar');
@@ -238,8 +238,8 @@ async function handleContact() {
   setTimeout(() => {
     status.className = 'form-status ok';
     status.innerHTML = isEn
-      ? `✅ Thank you, ${name}! Opening direct dialogue in Telegram...`
-      : `✅ Спасибо, ${name}! Открываю прямой диалог в Telegram...`;
+      ? `Thank you, ${name}! Opening direct dialogue in Telegram...`
+      : `Спасибо, ${name}! Открываю прямой диалог в Telegram...`;
 
     const greeting = isEn
       ? `Hello Mekan! My name is ${name} (${email}). Subject: ${subject || 'Collaboration'}. Message: ${msg}`
@@ -248,7 +248,7 @@ async function handleContact() {
     const tgUrl = `https://t.me/irreproachablee?text=${encodeURIComponent(greeting)}`;
     window.open(tgUrl, '_blank');
 
-    btn.textContent = isEn ? 'Sent ✓' : 'Отправлено ✓';
+    btn.textContent = isEn ? 'Sent' : 'Отправлено';
     ['cf-name', 'cf-email', 'cf-subject', 'cf-msg'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.value = '';
@@ -271,11 +271,11 @@ function toggleChat() {
 const kb_ru = {
   skills: `Инженерный стек Мекана Маммедова:
 
-🛡️ Сетевой инжиниринг: Отказоустойчивые протоколы сквозного шифрования (VLESS, Xray-core, XHTTP packet-up), Anycast CDN (Fastly), Cloudflare Edge, Happ Crypt5, 1-Device Lock, gRPC RAM hot-reloading (adu/rmu).
-🤖 AI & RAG: Сверхбыстрый Hybrid RAG (BM25 FTS5 + FastEmbed BGE-small ONNX), Reciprocal Rank Fusion (4.5 мс на 35k кодов), Pydantic, Vision LLM OCR, ExcelEngine.
-⚙️ Backend & Data: Python, FastAPI, Asyncio, asyncpg, PostgreSQL 16, Redis, RabbitMQ, Docker Compose.
-✈️ Telegram-экосистема: Telegram Web Apps (TWA/TMA), Next.js, Supabase RLS, Telegram Stars, Telethon/Pyrogram OSINT.
-🌐 Scraping: Playwright Stealth, WAF & Cloudflare bypass, извлечение скрытых данных из SSR __NEXT_DATA__.`,
+• Сетевой инжиниринг: Отказоустойчивые протоколы сквозного шифрования (VLESS, Xray-core, XHTTP packet-up), Anycast CDN (Fastly), Cloudflare Edge, Happ Crypt5, 1-Device Lock, gRPC RAM hot-reloading (adu/rmu).
+• AI & RAG: Сверхбыстрый Hybrid RAG (BM25 FTS5 + FastEmbed BGE-small ONNX), Reciprocal Rank Fusion (4.5 мс на 35k кодов), Pydantic, Vision LLM OCR, ExcelEngine.
+• Backend & Data: Python, FastAPI, Asyncio, asyncpg, PostgreSQL 16, Redis, RabbitMQ, Docker Compose.
+• Telegram-экосистема: Telegram Web Apps (TWA/TMA), Next.js, Supabase RLS, Telegram Stars, Telethon/Pyrogram OSINT.
+• Scraping: Playwright Stealth, WAF & Cloudflare bypass, извлечение скрытых данных из SSR __NEXT_DATA__.`,
 
   transport: `Сетевой инжиниринг & Отказоустойчивые транспортные сети:
 
@@ -305,25 +305,25 @@ const kb_ru = {
 
   contact: `Прямые контакты Мекана:
 
-📱 Телефон: +993 63 126699
-💬 WhatsApp: https://wa.me/99363126699
-✈️ Telegram: @irreproachablee (https://t.me/irreproachablee)
-✉️ Email: mikhailmammeedov@gmail.com
-📍 Локация: Remote / Global Availability
-⚡ Формат: Boutique Automation Architect & Lead AI-Engineer`,
+• Телефон: +993 63 126699
+• WhatsApp: https://wa.me/99363126699
+• Telegram: @irreproachablee (https://t.me/irreproachablee)
+• Email: mikhailmammeedov@gmail.com
+• Локация: Remote / Global Availability
+• Формат: Boutique Automation Architect & Lead AI-Engineer`,
 
   hire: `Мекан открыт для высоконагруженных и сложных архитектурных проектов!
-Связаться можно напрямую в Telegram: @irreproachablee ✨`
+Связаться можно напрямую в Telegram: @irreproachablee`
 };
 
 const kb_en = {
   skills: `Mekan Mammedov's Engineering Stack:
 
-🛡️ Network Engineering: Resilient end-to-end encrypted protocols (VLESS, Xray-core, XHTTP packet-up), Anycast CDN (Fastly), Cloudflare Edge, Happ Crypt5, 1-Device Lock, in-memory gRPC hot-reloading (adu/rmu).
-🤖 AI & RAG: Ultra-Fast Hybrid RAG (BM25 FTS5 + FastEmbed BGE-small ONNX) with Reciprocal Rank Fusion (4.5ms across 35k codes), Pydantic, Vision LLM OCR, ExcelEngine.
-⚙️ Backend & Data: Python, FastAPI, Asyncio, asyncpg, PostgreSQL 16, Redis, RabbitMQ, Docker Compose.
-✈️ Telegram Ecosystem: Telegram Web Apps (TWA/TMA), Next.js, Supabase RLS, Telegram Stars, Telethon/Pyrogram OSINT.
-🌐 Scraping: Playwright Stealth, WAF & Cloudflare bypass, SSR __NEXT_DATA__ extraction.`,
+• Network Engineering: Resilient end-to-end encrypted protocols (VLESS, Xray-core, XHTTP packet-up), Anycast CDN (Fastly), Cloudflare Edge, Happ Crypt5, 1-Device Lock, in-memory gRPC hot-reloading (adu/rmu).
+• AI & RAG: Ultra-Fast Hybrid RAG (BM25 FTS5 + FastEmbed BGE-small ONNX) with Reciprocal Rank Fusion (4.5ms across 35k codes), Pydantic, Vision LLM OCR, ExcelEngine.
+• Backend & Data: Python, FastAPI, Asyncio, asyncpg, PostgreSQL 16, Redis, RabbitMQ, Docker Compose.
+• Telegram Ecosystem: Telegram Web Apps (TWA/TMA), Next.js, Supabase RLS, Telegram Stars, Telethon/Pyrogram OSINT.
+• Scraping: Playwright Stealth, WAF & Cloudflare bypass, SSR __NEXT_DATA__ extraction.`,
 
   transport: `Network Engineering & Resilient Transport Networks:
 
@@ -353,15 +353,15 @@ const kb_en = {
 
   contact: `Mekan's Direct Contacts:
 
-📱 Phone: +993 63 126699
-💬 WhatsApp: https://wa.me/99363126699
-✈️ Telegram: @irreproachablee (https://t.me/irreproachablee)
-✉️ Email: mikhailmammeedov@gmail.com
-📍 Location: Remote / Worldwide Availability
-⚡ Role: Boutique Automation Architect & Lead AI-Engineer`,
+• Phone: +993 63 126699
+• WhatsApp: https://wa.me/99363126699
+• Telegram: @irreproachablee (https://t.me/irreproachablee)
+• Email: mikhailmammeedov@gmail.com
+• Location: Remote / Worldwide Availability
+• Role: Boutique Automation Architect & Lead AI-Engineer`,
 
   hire: `Mekan is open to high-impact architectural and engineering opportunities!
-Reach out directly on Telegram: @irreproachablee ✨`
+Reach out directly on Telegram: @irreproachablee`
 };
 
 function getReply(m) {
@@ -377,8 +377,8 @@ function getReply(m) {
   if (/связ|контакт|телеграм|почт|email|telegram|phone|whatsapp/.test(m)) return kb.contact;
   if (/hello|hi|hey|привет|здравствуй/.test(m)) {
     return isEn
-      ? "Hello! 👋 I am Mekan's assistant. Ask me about network infrastructure, AI/RAG systems (Customs Copilot), projects, or how to get in touch!"
-      : "Привет! 👋 Я интерактивный ассистент Мекана. Спросите меня о сетевой инфраструктуре, AI-системах (Customs Copilot), проектах или контактах!";
+      ? "Hello! I am Mekan's assistant. Ask me about network infrastructure, AI/RAG systems (Customs Copilot), projects, or how to get in touch!"
+      : "Привет! Я интерактивный ассистент Мекана. Спросите меня о сетевой инфраструктуре, AI-системах (Customs Copilot), проектах или контактах!";
   }
   return isEn
     ? "Great question! You can discuss this directly with Mekan on Telegram @irreproachablee or check out the projects section!"

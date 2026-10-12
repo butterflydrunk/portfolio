@@ -1,1 +1,5 @@
 .DS_Store
+._*
+*.webloc
+build_scripts/
+portfolio_combined.html

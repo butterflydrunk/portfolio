@@ -57,16 +57,17 @@ function applyLanguage(lang) {
 
   // 4. Update language button UI
   const langBtn = document.getElementById('langToggleBtn');
+  const globeSvg = '<svg class="ui-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>';
   if (langBtn) {
     langBtn.innerHTML = lang === 'en'
-      ? '<span class="lang-flag">🌐</span> <span class="lang-code">EN</span>'
-      : '<span class="lang-flag">🌐</span> <span class="lang-code">RU</span>';
+      ? `${globeSvg} <span class="lang-code">EN</span>`
+      : `${globeSvg} <span class="lang-code">RU</span>`;
     langBtn.setAttribute('title', lang === 'en' ? 'Switch to Russian' : 'Switch to English');
   }
 
   const mobileLangBtn = document.getElementById('mobileLangBtn');
   if (mobileLangBtn) {
-    mobileLangBtn.innerHTML = lang === 'en' ? '🌐 Language: English' : '🌐 Язык: Русский';
+    mobileLangBtn.innerHTML = lang === 'en' ? `${globeSvg} English` : `${globeSvg} Русский`;
   }
 
   // 5. Notify script.js to update dynamic phrases (decrypt text, terminal, chat KB)
